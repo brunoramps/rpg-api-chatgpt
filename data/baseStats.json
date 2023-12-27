@@ -1,0 +1,6 @@
+{
+  "warrior": { "health": 250, "mana": 100 },
+  "archer": { "health": 200, "mana": 150 },
+  "healer": { "health": 150, "mana": 200 },
+  "mage": { "health": 100, "mana": 250 }
+}

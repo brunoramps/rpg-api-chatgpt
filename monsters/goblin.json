@@ -1,0 +1,17 @@
+{
+    "name": "Goblin",
+    "health": 200,
+    "fisic": 30,
+    "magic": 20,
+    "speed": 10,
+    "fisical-resistence": 10,
+    "magic-resistence": 15,
+    "exp": 100,
+    "gold-min": 50,
+    "gold-max": 100,
+    "items": [
+      {"id-item": 25, "chance": 2},
+      {"id-item": 26, "chance": 47}
+    ]
+  }
+  

@@ -1,0 +1,28 @@
+[
+  {
+    "username": "brunao",
+    "name": "Morguth",
+    "gender": "male",
+    "class": "mage",
+    "level": 1,
+    "exp": 0,
+    "id": "lqn9hdgyuolbm",
+    "health": 100,
+    "mana": 250,
+    "maxHealth": 100,
+    "maxMana": 250
+  },
+  {
+    "username": "brunao",
+    "name": "Morgutha",
+    "gender": "female",
+    "class": "archer",
+    "level": 1,
+    "exp": 0,
+    "id": "lqn9hh4euzqmr",
+    "health": 200,
+    "mana": 150,
+    "maxHealth": 200,
+    "maxMana": 150
+  }
+]

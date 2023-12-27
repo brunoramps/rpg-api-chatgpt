@@ -1,0 +1,17 @@
+{
+    "name": "Wolf",
+    "health": 150,
+    "fisic": 25,
+    "magic": 5,
+    "speed": 20,
+    "fisical-resistence": 10,
+    "magic-resistence": 5,
+    "exp": 100,
+    "gold-min": 50,
+    "gold-max": 75,
+    "items": [
+      {"id-item": 40, "chance": 10},
+      {"id-item": 41, "chance": 20}
+    ]
+  }
+  

@@ -1,0 +1,17 @@
+{
+    "name": "Orc",
+    "health": 250,
+    "fisic": 40,
+    "magic": 10,
+    "speed": 15,
+    "fisical-resistence": 20,
+    "magic-resistence": 10,
+    "exp": 150,
+    "gold-min": 75,
+    "gold-max": 125,
+    "items": [
+      {"id-item": 30, "chance": 5},
+      {"id-item": 31, "chance": 40}
+    ]
+  }
+  

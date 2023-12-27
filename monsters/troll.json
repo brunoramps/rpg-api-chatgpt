@@ -1,0 +1,17 @@
+{
+    "name": "Troll",
+    "health": 300,
+    "fisic": 50,
+    "magic": 5,
+    "speed": 10,
+    "fisical-resistence": 30,
+    "magic-resistence": 5,
+    "exp": 200,
+    "gold-min": 100,
+    "gold-max": 150,
+    "items": [
+      {"id-item": 35, "chance": 8},
+      {"id-item": 36, "chance": 30}
+    ]
+  }
+  

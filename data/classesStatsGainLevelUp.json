@@ -1,0 +1,6 @@
+[
+  { "class": "warrior", "health": 50, "mana": 10 },
+  { "class": "archer", "health": 25, "mana": 15 },
+  { "class": "healer", "health": 30, "mana": 30 },
+  { "class": "mage", "health": 20, "mana": 50 }
+]

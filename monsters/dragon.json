@@ -1,0 +1,17 @@
+{
+    "name": "Dragon",
+    "health": 500,
+    "fisic": 70,
+    "magic": 100,
+    "speed": 25,
+    "fisical-resistence": 50,
+    "magic-resistence": 50,
+    "exp": 500,
+    "gold-min": 250,
+    "gold-max": 500,
+    "items": [
+      {"id-item": 50, "chance": 15},
+      {"id-item": 51, "chance": 25}
+    ]
+  }
+  

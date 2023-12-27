@@ -1,0 +1,111 @@
+{
+    "wooden_sword": {
+      "id": 1,
+      "name": "Wooden Sword",
+      "description": "A basic wooden sword.",
+      "physicalAttack": 10,
+      "magicalAttack": 0,
+      "physicalDefense": 5,
+      "magicalDefense": 0,
+      "category": "equipable",
+      "type": "weapon",
+      "material": "wood"
+    },
+    "copper_sword": {
+      "id": 2,
+      "name": "Copper Sword",
+      "description": "A simple copper sword.",
+      "physicalAttack": 15,
+      "magicalAttack": 0,
+      "physicalDefense": 10,
+      "magicalDefense": 0,
+      "category": "equipable",
+      "type": "weapon",
+      "material": "copper"
+    },
+    "iron_sword": {
+      "id": 3,
+      "name": "Iron Sword",
+      "description": "A sturdy iron sword.",
+      "physicalAttack": 20,
+      "magicalAttack": 0,
+      "physicalDefense": 15,
+      "magicalDefense": 0,
+      "category": "equipable",
+      "type": "weapon",
+      "material": "iron"
+    },
+    "plate_sword": {
+      "id": 4,
+      "name": "Plate Sword",
+      "description": "A beautyful plate sword.",
+      "physicalAttack": 30,
+      "magicalAttack": 0,
+      "physicalDefense": 22,
+      "magicalDefense": 0,
+      "category": "equipable",
+      "type": "weapon",
+      "material": "plate"
+    },
+    "magical_sword": {
+      "id": 5,
+      "name": "Iron Sword",
+      "description": "A magical and powerfull sword.",
+      "physicalAttack": 10,
+      "magicalAttack": 50,
+      "physicalDefense": 5,
+      "magicalDefense": 35,
+      "category": "equipable",
+      "type": "weapon",
+      "material": "magical"
+    },
+    "golden_sword": {
+      "id": 6,
+      "name": "Golden Sword",
+      "description": "A perfect sword.",
+      "physicalAttack": 75,
+      "magicalAttack": 0,
+      "physicalDefense": 50,
+      "magicalDefense": 0,
+      "category": "equipable",
+      "type": "weapon",
+      "material": "gold"
+    },  
+    "wooden_helmet": {
+      "id": 11,
+      "name": "Wooden Helmet",
+      "description": "A basic wooden helmet.",
+      "physicalAttack": 0,
+      "magicalAttack": 0,
+      "physicalDefense": 5,
+      "magicalDefense": 5,
+      "category": "equipable",
+      "type": "helmet",
+      "material": "wood"
+    },
+    "copper_helmet": {
+      "id": 12,
+      "name": "Copper Helmet",
+      "description": "A simple copper helmet.",
+      "physicalAttack": 0,
+      "magicalAttack": 0,
+      "physicalDefense": 10,
+      "magicalDefense": 10,
+      "category": "equipable",
+      "type": "helmet",
+      "material": "copper"
+    },
+    "iron_helmet": {
+      "id": 13,
+      "name": "Iron Helmet",
+      "description": "A sturdy iron helmet.",
+      "physicalAttack": 0,
+      "magicalAttack": 0,
+      "physicalDefense": 15,
+      "magicalDefense": 15,
+      "category": "equipable",
+      "type": "helmet",
+      "material": "iron"
+    }
+  }
+  
