@@ -106,6 +106,12 @@
       "category": "equipable",
       "type": "helmet",
       "material": "iron"
+    },
+    "gold_coin" : {
+      "id": 1300,
+      "name": "Gold Coin",
+      "description": "A piece of gold, used to buy some things.",
+      "type" : "gold"
     }
   }
   

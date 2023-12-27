@@ -3,9 +3,14 @@ import path from "path";
 
 const charactersFilePath = path.resolve("./data/characters.json");
 const baseStatsFilePath = path.resolve("./data/baseStats.json");
-const classesStatsGainLevelUpFilePath = path.resolve("./data/classesStatsGainLevelUp.json");
 const inventoriesDirPath = path.resolve("./data/inventories");
 const equippedItemsDirPath = path.resolve("./data/equippedItems");
+
+const classesStatsGainLevelUpFilePath = path.resolve("./data/classesStatsGainLevelUp.json");
+const configFilePath = path.resolve('./data/config.json');
+const inventoryDirPath = path.resolve('./data/inventories');
+
+
 
 async function createCharacter(username, character) {
   try {
@@ -51,7 +56,7 @@ async function createCharacter(username, character) {
   }
 }
 
-async function updateCharacter(username, characterId) {
+async function updateCharacter(username, characterId, expGained, loot) {
   try {
     const characters = await getCharacters();
     const classesStatsGainLevelUp = await getClassesStatsGainLevelUp();
@@ -61,11 +66,14 @@ async function updateCharacter(username, characterId) {
 
     // Verificar se o personagem existe
     if (characterIndex === -1) {
-      return { success: false, message: "Character not found" };
+      return { success: false, message: 'Character not found' };
     }
 
     // Atualizar o personagem (exemplo: aumentar o nível)
     characters[characterIndex].level += 1;
+
+    // Adicionar a experiência ganha
+    characters[characterIndex].exp += expGained;
 
     // Atualizar Max Health e Max Mana de acordo com o ganho de atributos ao subir de nível
     const classStatsGain = classesStatsGainLevelUp.find((stats) => stats.class === characters[characterIndex].class);
@@ -75,10 +83,54 @@ async function updateCharacter(username, characterId) {
     // Atualizar o arquivo characters.json
     await fs.writeFile(charactersFilePath, JSON.stringify(characters, null, 2));
 
-    return { success: true, message: "Character updated successfully" };
+    // Adicionar loot ao inventário
+    const result = await addToInventory(characterId, loot);
+
+    return { success: true, message: 'Character updated successfully', lootResult: result };
   } catch (error) {
-    console.error("Error updating character:", error.message);
-    return { success: false, message: "Error updating character" };
+    console.error('Error updating character:', error.message);
+    return { success: false, message: 'Error updating character' };
+  }
+}
+
+async function addToInventory(characterId, loot) {
+  try {
+    const inventoryFilePath = path.resolve(`${inventoryDirPath}/${characterId}.json`);
+    const inventory = await getInventory(characterId);
+
+    // Verificar espaço no inventário
+    const config = await getConfig();
+    if (!config) {
+      return { success: false, message: 'Error loading configuration' };
+    }
+
+    const remainingSpace = config.MAX_INVENTORY_SIZE - inventory.length;
+    if (loot.length > remainingSpace) {
+      return { success: false, message: 'Inventory full. Some items were discarded.' };
+    }
+
+    // Adicionar itens ao inventário
+    for (const item of loot) {
+      // Se for um item de ouro, adiciona ou incrementa a quantidade no inventário
+      if (item.type === 'gold') {
+        const existingGold = inventory.find((invItem) => invItem.type === 'gold');
+        if (existingGold) {
+          existingGold.amount += item.amount;
+        } else {
+          inventory.push(item);
+        }
+      } else {
+        inventory.push(item);
+      }
+    }
+
+    // Atualizar o arquivo de inventário
+    await fs.writeFile(inventoryFilePath, JSON.stringify(inventory, null, 2));
+
+    return { success: true, message: 'Items added to inventory successfully' };
+  } catch (error) {
+    console.error('Error adding to inventory:', error.message);
+    return { success: false, message: 'Error adding to inventory' };
   }
 }
 
@@ -137,5 +189,31 @@ async function updateEquippedItems(characterId, equippedItems) {
   await fs.writeFile(equippedItemsFilePath, JSON.stringify(equippedItems, null, 2));
 }
 
+async function getCharacterById(characterId) {
+  try {
+    const characters = await getCharacters();
+    const character = characters.find((char) => char.id === characterId);
+
+    if (!character) {
+      throw new Error('Character not found');
+    }
+
+    return character;
+  } catch (error) {
+    console.error('Error getting character by ID:', error.message);
+    throw error;
+  }
+}
+
+async function getConfig() {
+  try {
+    const data = await fs.readFile(configFilePath, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    console.error('Error loading config:', error.message);
+    return null;
+  }
+}
+
 export { createCharacter, updateCharacter, updateInventory, updateEquippedItems, getEquippedItems,
-createInventory, getInventory, createEquippedItems };
+createInventory, getInventory, createEquippedItems, getCharacterById, getConfig };

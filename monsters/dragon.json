@@ -11,7 +11,8 @@
     "gold-max": 500,
     "items": [
       {"id-item": 50, "chance": 15},
-      {"id-item": 51, "chance": 25}
+      {"id-item": 51, "chance": 25},
+      {"id-item" : 1300, "chance": 50}
     ]
   }
   

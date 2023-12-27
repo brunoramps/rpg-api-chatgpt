@@ -3,7 +3,7 @@ import path from 'path';
 
 const monstersDirPath = path.resolve('./monsters');
 
-async function getMonster(monsterName) {
+async function getMonsters(monsterName) {
   try {
     const monsterFilePath = path.resolve(monstersDirPath, `${monsterName}.json`);
     const data = await fs.readFile(monsterFilePath, 'utf-8');
@@ -14,4 +14,4 @@ async function getMonster(monsterName) {
   }
 }
 
-export { getMonster };
+export { getMonsters };

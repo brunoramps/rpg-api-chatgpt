@@ -4,13 +4,13 @@
     "name": "Morguth",
     "gender": "male",
     "class": "mage",
-    "level": 1,
+    "level": 41,
     "exp": 0,
-    "id": "lqn9hdgyuolbm",
-    "health": 100,
-    "mana": 250,
-    "maxHealth": 100,
-    "maxMana": 250
+    "id": "lqncjdzy8ykxa",
+    "health": 86000,
+    "mana": 2150,
+    "maxHealth": 900,
+    "maxMana": 2250
   },
   {
     "username": "brunao",
@@ -19,7 +19,7 @@
     "class": "archer",
     "level": 1,
     "exp": 0,
-    "id": "lqn9hh4euzqmr",
+    "id": "lqncjfodj73o4",
     "health": 200,
     "mana": 150,
     "maxHealth": 200,
